@@ -96,13 +96,6 @@ fn read_header<T: byteorder::ByteOrder>(cursor: &mut Cursor<&[u8]>, is_64: bool)
     })
 }
 
-// fn parse_rpath_command(data: &[u8]) -> Result<RpathCommand, std::io::Error> {
-//     // ... (keep the parse_rpath_command function from the previous example)
-// }
-
-// fn modify_rpath(data: &mut Vec<u8>, old_path: &str, new_path: &str) -> Result<(), std::io::Error> {
-//     // ... (keep the modify_rpath function from the previous example)
-// }
 
 fn add_rpath(data: &mut Vec<u8>, new_path: &str) -> Result<(), std::io::Error> {
     let (mut header, load_commands) = parse_macho(data)?;
